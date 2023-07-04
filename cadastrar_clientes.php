@@ -13,7 +13,17 @@ if(isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario'])):
     <title>Crud WER DIGITAL</title>
 </head>
 <body>
-
+<header>
+        <nav>
+            <ul>
+                <li><a href="tela_inicial.php" >Home </a></li>
+                <li><a href="cadastrar_clientes.php" >Cadastrar Clientes </a></li>
+                <li><a href="logout.php" >Sair </a></li>
+              
+            </ul>
+        </nav>
+    </header>
+    <h1>Cadastrar Clientes</h1>
         <div>
             <form action="novoCliente.php" method="POST">
 

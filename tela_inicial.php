@@ -61,8 +61,8 @@
                             <td><?=$usuario['end_cobranca'];?></td>
                             <td><?=$usuario['end_entrega'];?></td>
                             <td><?=$usuario['nome_usuario'];?></td>
-                            <td><a href="editar.php">Editar</a>
-                            <a href="deletar.php">Excluir</a></td>
+                            <td><a href="editar.php?id=<?=$usuario['id_clientes'];?>">Editar</a>
+                            <a href="deletar.php?id=<?=$usuario['id_clientes'];?>">Excluir</a></td>
                             
 
                         </tr>

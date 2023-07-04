@@ -105,6 +105,58 @@
               
             $sql->execute();
         }
+        public function deletar($id){
+
+            $usuario= new User();
+            $conexao= $usuario->conecta();
+    
+            $sql= $conexao->prepare("DELETE FROM clientes WHERE id_clientes = :id");
+            $sql->bindValue(':id',$id);
+            $sql->execute();
+        }
+
+        public function editar($id,$nome,$idade,$email,$endEntrega,$endCobranca,$id_user){
+           
+            $usuario= new User();
+            $conexao = $usuario->conecta();
+    
+            $sql = $conexao->prepare("UPDATE clientes SET nome_cliente = :nome, idade = :idade, email = :email, end_cobranca = :endCobranca, 
+            end_entrega = :endEntrega WHERE id_clientes = :id");
+            $sql->bindValue(':id',$id);
+            $sql->bindValue(':nome',$nome);
+            $sql->bindValue(':idade',$idade);
+            $sql->bindValue(':email',$email);
+            $sql->bindValue(':endCobranca',$endCobranca);
+            $sql->bindValue(':endEntrega',$endEntrega);          
+            $sql->bindValue(':id_user',$id_user);
+            $sql->execute();
+    
+    
+        }
+        public function pesquisa_edita($id_clientes){
+
+            $usuario= new User();
+            $conexao= $usuario->conecta();
+
+            $clientes = [];
+
+            $sql = $conexao->prepare("SELECT * FROM clientes WHERE id_clientes = :id_clientes");
+            $sql->bindValue(':id_clientes',$id_clientes);
+            $sql->execute();
+
+                if($sql->rowCount() > 0){
+                     $clientes = $sql->fetch(PDO::FETCH_ASSOC);
+                }else{
+                     header("Location: tela_inicial.php");
+                exit;
+            }
+
+            return $clientes;
+
+        
+        }
+
+    
 
     }
 

@@ -13,7 +13,7 @@ if(isset($_SESSION['id_usuario']) && !empty($_SESSION['id_usuario'])):
     <title>Crud WER DIGITAL</title>
 </head>
 <body>
-
+        <h1>Cadastrar Usuário</h1>
         <div>
             <form action="novoUsuario.php" method="POST">
 
