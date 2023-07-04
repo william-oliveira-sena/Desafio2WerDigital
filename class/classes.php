@@ -120,8 +120,8 @@
             $usuario= new User();
             $conexao = $usuario->conecta();
     
-            $sql = $conexao->prepare("UPDATE clientes SET nome_cliente = :nome, idade = :idade, email = :email, end_cobranca = :endCobranca, 
-            end_entrega = :endEntrega WHERE id_clientes = :id");
+            $sql = $conexao->prepare("UPDATE clientes SET id_clientes = :id, nome_cliente = :nome, idade = :idade, email = :email, end_cobranca = :endCobranca, 
+            end_entrega = :endEntrega, id_usuario = :id_user WHERE id_clientes = :id");
             $sql->bindValue(':id',$id);
             $sql->bindValue(':nome',$nome);
             $sql->bindValue(':idade',$idade);

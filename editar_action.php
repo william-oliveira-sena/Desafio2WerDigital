@@ -2,7 +2,7 @@
    
    require_once "vendor/autoload.php";
 
-    $id = filter_input(INPUT_POST,'id');
+    $id = filter_input(INPUT_POST,'id_clientes');
     $nome = filter_input(INPUT_POST,'nome');    
     $idade = filter_input(INPUT_POST,'idade');
     $email = filter_input(INPUT_POST,'email');
