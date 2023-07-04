@@ -2,6 +2,8 @@
 
     require_once "vendor/autoload.php";
 
+    if(isset($_POST['user']) && !empty($_POST['user']) && isset($_POST['senha']) && !empty($_POST['senha'])):
+    
     $id = filter_input(INPUT_GET,'id');
     $cliente = [];
     
@@ -13,6 +15,7 @@
     }else{
         header("Location: tela_inicial.php");
      }
+   
 ?>
 
 <!DOCTYPE html>
@@ -70,3 +73,4 @@
 </body>
 </html>
 
+<?php else: header("Location: index.php"); endif; ?>

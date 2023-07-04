@@ -59,11 +59,7 @@
             header("Location: index.php");
         }
 
-        public function pesquisar($id_usuario){
-
-            
-            $usuario= new User();
-            $conexao = $usuario->conecta();
+        public function pesquisar($id_usuario,$conexao){      
 
             $lista = [];
 

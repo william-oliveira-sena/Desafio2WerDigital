@@ -10,8 +10,10 @@
             $id_usuario = $_SESSION['id_usuario'];  
               
             $usuario = new User();
+            $conexao = $usuario->conecta();
          
-            $dados = $usuario->pesquisar($id_usuario);
+            //enviando a variavel conexão por parametro da função pesquisar
+            $dados = $usuario->pesquisar($id_usuario,$conexao);
     
 ?>
 
